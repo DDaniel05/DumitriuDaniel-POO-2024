@@ -18,24 +18,24 @@ private:
     unsigned vs;
     char nume[20];
     char prenume[20];
-    
-public:
-    Pers(unsigned vs1, char* num1, char* prenum1)
-        vs = vs1;
-    strcpy_s(nume, 20, num1);
-    strcpy_s(prenume, 20, prenum1);
-};
-Pers(){}
-unsigned arata_vs() { return this->vs; }
-char* arata_nume() { return this->nume; }
 
+public:
+    Pers(unsigned vs1, char* num1, char* prenum1) {
+        vs = vs1;
+        strcpy_s(nume, 20, num1);
+        strcpy_s(prenume, 20, prenum1);
+    };
+    Pers() {}
+    unsigned arata_vs() { return this->vs; }
+    char* arata_nume() { return this->nume; }
+};
 int main()
 {
-    Console::WriteLine("Introduceti numarul de persoane: ")
-        int nr_persoane;
+    Console::WriteLine("Introduceti numarul de persoane: ");
+    int nr_persoane;
     cin >> nr_persoane;
     Persoana* persoane = new Persoana[nr_persoane];
-    for (i = 0; i < nr_persoane; i++) {
+    for (int i = 0; i < nr_persoane; i++) {
         Console::WriteLine("Introduceti numele persoanei {0} : ", i + 1);
         char nume[20];
         cin >> nume;
